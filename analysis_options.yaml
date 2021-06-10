@@ -1,0 +1,10 @@
+include: package:pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    public_member_api_docs: false
+    one_member_abstracts: false
+    directives_ordering: false
+    avoid_classes_with_only_static_members: false
+    unnecessary_this: false
+    use_setters_to_change_properties: false
