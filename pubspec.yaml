@@ -36,10 +36,10 @@ flutter:
 fonts:
   - family: BW Seido
     fonts:
-      - asset: lib/assets/fonts/bw_seido_round_regular.otf
-      - asset: lib/assets/fonts/bw_seido_round_bold.otf
+      - asset: lib/assets/fonts/bw_seido_round_regular.ttf
+      - asset: lib/assets/fonts/bw_seido_round_bold.ttf
         weight: 800
-      - asset: lib/assets/fonts/bw_seido_round_light.otf
+      - asset: lib/assets/fonts/bw_seido_round_light.ttf
         weight: 300
 
 flutter_icons:
