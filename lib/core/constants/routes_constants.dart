@@ -1,6 +1,6 @@
 class RoutesConsts {
   static Future<String> get initialRoute async {
-    return home;
+    return welcome;
   }
 
   static const String home = '/';
