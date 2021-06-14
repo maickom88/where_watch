@@ -10,8 +10,8 @@ extension DefaultSpacer on Widget {
   }
 
   Widget withWidthSpacer({
-    double height = DefaultApp.wSpacer,
+    double width = DefaultApp.wSpacer,
   }) {
-    return SizedBox(height: height);
+    return SizedBox(width: width);
   }
 }

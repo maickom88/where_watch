@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rx_notifier/rx_notifier.dart';
+import 'package:where_watch_app/presentation/pages/welcome/welcome.dart';
 
-import '../../../core/theme/theme.dart';
 import 'widget/widget.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -8,20 +9,32 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      body: SafeArea(
+        child: PageView(
+          onPageChanged: (indexPage) => ControllerPage.page.value = indexPage,
+          controller: ControllerPage.controller,
           children: [
-            HeaderTitle(),
-            withHeightSpacer(),
-            Description(),
-            withHeightSpacer(),
-            Ilustration(),
-            withHeightSpacer(),
+            FirstFlow(),
+            SecondFlow(
+              onCategories: (categories) => print(categories),
+            ),
+            ThreeFlow(
+              onProviders: (providers) => print(providers),
+            ),
           ],
-        ).withPadding(),
+        ),
       ),
-      floatingActionButton: BottonButtom(),
+      floatingActionButton: RxBuilder(
+        builder: (_) => Visibility(
+          visible: ControllerPage.page.value < 2,
+          child: BottonButtom(
+            onTap: () => ControllerPage.controller.nextPage(
+              duration: Duration(milliseconds: 350),
+              curve: Curves.linearToEaseOut,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

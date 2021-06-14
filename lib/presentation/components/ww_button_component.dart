@@ -5,15 +5,17 @@ import '../../core/theme/theme.dart';
 
 class WWButton extends StatelessWidget {
   final Widget child;
+  final VoidCallback onTap;
   const WWButton({
     Key? key,
     required this.child,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       borderRadius: BorderRadius.circular(14),
       child: Container(
         decoration: BoxDecoration(
