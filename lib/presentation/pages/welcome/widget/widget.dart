@@ -1,0 +1,11 @@
+export './bottom_button_widget.dart';
+export './button_category_widget.dart';
+export './categories_widget.dart';
+export './description_widget.dart';
+export './first_flow.dart';
+export './header_second_flow.dart';
+export './header_title_widget.dart';
+export './ilustration_widget.dart';
+export './second_flow.dart';
+export 'three_flow.dart';
+export './card_provider_widget.dart';

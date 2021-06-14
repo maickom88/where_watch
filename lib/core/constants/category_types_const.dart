@@ -1,0 +1,12 @@
+const comedy = 'Comedia';
+const actionAndAdventure = 'Ação & Aventura';
+const animation = 'Animação';
+const family = 'Família';
+const history = 'História';
+const documentary = 'Documentário';
+const drama = 'Drama';
+const horror = 'Terror';
+const warAndMilitary = 'Guerra & Militar';
+const fantasy = 'Fantasia';
+const fiction = 'Ficção';
+const sportAndFitness = 'Esporte & Fitness ';

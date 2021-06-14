@@ -19,6 +19,9 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   get: ^4.1.4
+  rx_notifier: ^1.1.0
+  font_awesome_flutter: ^9.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -34,18 +37,18 @@ flutter:
     - lib/assets/animations/
 
 fonts:
-  - family: BW Seido
+  - family: BWSeido
     fonts:
-      - asset: lib/assets/fonts/bw_seido_round_regular.ttf
-      - asset: lib/assets/fonts/bw_seido_round_bold.ttf
+      - asset: lib/assets/fonts/bw-seido-regular.ttf
+      - asset: lib/assets/fonts/bw-seido-bold.ttf
         weight: 800
-      - asset: lib/assets/fonts/bw_seido_round_light.ttf
+      - asset: lib/assets/fonts/bw-seido-light.ttf
         weight: 300
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "lib/assets/images/logo.png"
+  image_path: "lib/assets/images/icon.png"
 
 flutter_native_splash:
   flutter_native_splash:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTypography {
-  static const String fontFamilyName = 'BW Seido';
+  static const String fontFamilyName = 'BWSeido';
 
   static TextStyle size65() {
     return TextStyle(fontSize: 65);

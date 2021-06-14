@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:where_watch_app/core/theme/theme.dart';
 
 import 'core/constants/constants.dart';
 import 'core/routers/routers.dart';
+import 'core/theme/theme.dart';
 
 Future<void> main() async {
   runApp(WhereWatchApp(await RoutesConsts.initialRoute));
