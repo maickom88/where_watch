@@ -5,12 +5,7 @@ import 'nav/nav.dart';
 class NavigatorController {
   static List<Widget> navs = [
     ExplorerNav(),
-    Container(
-      color: Colors.red,
-      child: Center(
-        child: Text('asdjjjjjjjjjjjjjjjjjjjjjjjjjj'),
-      ),
-    ),
+    FavoriteNav(),
     Container(
       color: Colors.blue,
       child: Center(
