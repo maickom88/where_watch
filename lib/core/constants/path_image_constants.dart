@@ -1,12 +1,12 @@
 class AppImages {
-  static const String _base_path = 'lib/assets/images/';
+  static const String basePath = 'lib/assets/images/';
 
-  static const String globo_play = '${_base_path}globo_play.png';
-  static const String netflix = '${_base_path}netflix.png';
-  static const String prime_video = '${_base_path}prime_video.png';
-  static const String disney_plus = '${_base_path}disney_plus.png';
-  static const String ilustration01 = '${_base_path}ilustration_01.png';
-  static const String logo = '${_base_path}logo.png';
-  static const String avatar = '${_base_path}avatar.png';
-  static const String onlyIcon = '${_base_path}only_icon.png';
+  static const String globo_play = '${basePath}globo_play.png';
+  static const String netflix = '${basePath}netflix.png';
+  static const String prime_video = '${basePath}prime_video.png';
+  static const String disney_plus = '${basePath}disney_plus.png';
+  static const String ilustration01 = '${basePath}ilustration_01.png';
+  static const String logo = '${basePath}logo.png';
+  static const String avatar = '${basePath}avatar.png';
+  static const String onlyIcon = '${basePath}only_icon.png';
 }

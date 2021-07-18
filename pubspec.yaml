@@ -22,7 +22,11 @@ dependencies:
   rx_notifier: ^1.1.0
   font_awesome_flutter: ^9.1.0
   animations: ^2.0.0
-
+  lottie: ^1.1.0
+  flutter_triple: ^1.2.3
+  either_dart: ^0.1.2
+  http: ^0.13.3
+  fancy_shimmer_image: ^2.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

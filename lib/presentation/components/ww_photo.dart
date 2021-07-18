@@ -1,3 +1,4 @@
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/enums/enums.dart';
@@ -18,9 +19,10 @@ class WWPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
+      constraints: BoxConstraints(maxHeight: 200),
       decoration: BoxDecoration(
           borderRadius: DefaultApp.defaultBorderRadius(),
-          color: Colors.red,
+          color: Colors.grey.withOpacity(0.3),
           boxShadow: [
             DefaultApp.defaultBoxShadow(),
           ]),
@@ -29,9 +31,8 @@ class WWPhoto extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: DefaultApp.defaultBorderRadius(),
-            child: Image.network(
-              image,
-              fit: BoxFit.cover,
+            child: FancyShimmerImage(
+              imageUrl: image,
               width: width,
             ),
           ),

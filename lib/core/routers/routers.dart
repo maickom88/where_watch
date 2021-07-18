@@ -9,6 +9,7 @@ class Routers {
     GetPage(
       name: RoutesConsts.home,
       page: () => HomePage(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: RoutesConsts.welcome,

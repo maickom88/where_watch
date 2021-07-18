@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:where_watch_app/core/constants/constants.dart';
+import 'package:get/get.dart';
+import '../constants/constants.dart';
+import '../../presentation/components/components.dart';
 
 class DefaultApp {
   static const double padding = 15;
@@ -17,6 +19,13 @@ class DefaultApp {
       color: Color(0x8E000000),
     );
   }
+
+  static Future<T?> showLoad<T>() => Get.dialog(
+        WWDialogLoading(),
+        barrierColor: Colors.black38,
+      );
+
+  static void close<T>() => Get.back();
 
   static SizedBox defaultSpaceHeight({double height = 20}) {
     return SizedBox(
