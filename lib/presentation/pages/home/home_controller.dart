@@ -7,11 +7,6 @@ class NavigatorController {
     ExplorerNav(),
     FavoriteNav(),
     ProfileNav(),
-    Container(
-      color: Colors.white,
-      child: Center(
-        child: Text('asdddddddddd'),
-      ),
-    ),
+    SettingsNav(),
   ];
 }
