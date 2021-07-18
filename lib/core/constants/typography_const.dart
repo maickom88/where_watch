@@ -23,6 +23,10 @@ class AppTypography {
     return TextStyle(fontSize: 30, fontWeight: FontWeight.w800);
   }
 
+  static TextStyle size20WithLight() {
+    return TextStyle(fontSize: 20, fontWeight: FontWeight.w300);
+  }
+
   static TextStyle size20() {
     return TextStyle(fontSize: 20);
   }
@@ -37,9 +41,5 @@ class AppTypography {
 
   static TextStyle size13WithLight(BuildContext context) {
     return TextStyle(fontSize: 13, fontWeight: FontWeight.w300);
-  }
-
-  static TextStyle size20WithLight(BuildContext context) {
-    return TextStyle(fontSize: 20, fontWeight: FontWeight.w300);
   }
 }

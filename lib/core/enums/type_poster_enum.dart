@@ -1,0 +1,1 @@
+enum PosterType { movie, serie }
