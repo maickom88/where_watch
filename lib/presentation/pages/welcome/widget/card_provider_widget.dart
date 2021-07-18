@@ -40,10 +40,10 @@ class _CardProviderState extends State<CardProvider>
         curve: Curves.easeInBack,
         child: AnimatedContainer(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: DefaultApp.defaultBorderRadius(border: 15),
             border: isSelected
                 ? Border.all(width: 4, color: Theme.of(context).primaryColor)
-                : null,
+                : DefaultApp.zero,
             boxShadow: [
               DefaultApp.defaultBoxShadow(),
             ],
@@ -51,7 +51,7 @@ class _CardProviderState extends State<CardProvider>
           duration: Duration(milliseconds: 250),
           curve: Curves.easeInBack,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: DefaultApp.defaultBorderRadius(border: 15),
             child: Image.asset(
               widget.image,
               fit: BoxFit.cover,

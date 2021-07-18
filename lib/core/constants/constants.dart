@@ -6,3 +6,4 @@ export './url_constants.dart';
 export 'animations_const.dart';
 export 'category_types_const.dart';
 export 'typography_const.dart';
+export './gender_types_constants.dart';
