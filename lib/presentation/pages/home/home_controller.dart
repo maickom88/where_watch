@@ -6,12 +6,7 @@ class NavigatorController {
   static List<Widget> navs = [
     ExplorerNav(),
     FavoriteNav(),
-    Container(
-      color: Colors.blue,
-      child: Center(
-        child: Text('Oláaaaaaaa'),
-      ),
-    ),
+    ProfileNav(),
     Container(
       color: Colors.white,
       child: Center(

@@ -14,4 +14,14 @@ extension DefaultPaddig on Widget {
         ),
         child: this);
   }
+
+  Widget withBottomPadding({
+    double bottom = DefaultApp.vPadding,
+  }) {
+    return Padding(
+        padding: EdgeInsets.only(
+          bottom: bottom,
+        ),
+        child: this);
+  }
 }
