@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/enums/enums.dart';
 import '../../core/theme/theme.dart';
+import 'components.dart';
 
 class WWPoster extends StatelessWidget {
   final double width;
@@ -27,24 +28,9 @@ class WWPoster extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: width,
-            decoration: BoxDecoration(
-                borderRadius: DefaultApp.defaultBorderRadius(),
-                color: Colors.red,
-                boxShadow: [
-                  DefaultApp.defaultBoxShadow(),
-                ]),
-            child: Stack(
-              alignment: AlignmentDirectional.bottomEnd,
-              children: [
-                buildClipRRect(),
-                Visibility(
-                  visible: posterType == PosterType.serie,
-                  child: buildTagType(context),
-                ),
-              ],
-            ),
+          WWPhoto(
+            image: image,
+            posterType: posterType,
           ),
           withHeightSpacer(height: 5),
           Container(
@@ -71,35 +57,5 @@ class WWPoster extends StatelessWidget {
         ],
       ),
     ).withPadding(horizontal: 10, vertical: 0);
-  }
-
-  ClipRRect buildClipRRect() {
-    return ClipRRect(
-      borderRadius: DefaultApp.defaultBorderRadius(),
-      child: Image.network(
-        image,
-        fit: BoxFit.cover,
-        width: width,
-      ),
-    );
-  }
-
-  Widget buildTagType(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 7),
-      decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          borderRadius: DefaultApp.defaultBorderRadius(),
-          boxShadow: [
-            DefaultApp.defaultBoxShadow(),
-          ]),
-      child: Text(
-        'Série',
-        style: Theme.of(context)
-            .textTheme
-            .bodyText1
-            ?.copyWith(color: Colors.white),
-      ),
-    ).withPadding(horizontal: 10, vertical: 10);
   }
 }
