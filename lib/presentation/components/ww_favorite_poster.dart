@@ -31,43 +31,61 @@ class FavoritePoster extends StatelessWidget {
               ),
             ),
             withWidthSpacer(),
-            IntrinsicWidth(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Stranger Things',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline3
-                        ?.copyWith(fontWeight: FontWeight.w600),
+            Stack(
+              children: [
+                IntrinsicWidth(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Stranger Things',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline3
+                            ?.copyWith(fontWeight: FontWeight.w600),
+                      ),
+                      withHeightSpacer(),
+                      Text(
+                        '+7EP',
+                        style: Theme.of(context).textTheme.headline3?.copyWith(
+                            fontSize: 40, fontWeight: FontWeight.w600),
+                      ),
+                      Spacer(),
+                      Container(
+                        width: Get.width.percent(59),
+                        height: 50,
+                        child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 1,
+                          itemBuilder: (context, index) {
+                            return CardProvider(
+                              image: '',
+                              url: '',
+                            );
+                          },
+                        ),
+                      )
+                    ],
                   ),
-                  withHeightSpacer(),
-                  Text(
-                    '+7EP',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline3
-                        ?.copyWith(fontSize: 40, fontWeight: FontWeight.w600),
-                  ),
-                  Spacer(),
-                  Container(
-                    width: Get.width.percent(59),
-                    height: 50,
-                    child: ListView.builder(
-                      physics: BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 1,
-                      itemBuilder: (context, index) {
-                        return CardProvider(
-                          image: '',
-                          url: '',
-                        );
-                      },
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 70,
+                      child: InkWell(
+                        onTap: () {},
+                        child: Icon(
+                          Icons.bookmark,
+                          size: 80,
+                          color: Colors.white.withOpacity(0.3),
+                        ),
+                      ),
                     ),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             )
           ],
         ),

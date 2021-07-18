@@ -18,6 +18,12 @@ class DefaultApp {
     );
   }
 
+  static SizedBox defaultSpaceHeight({double height = 20}) {
+    return SizedBox(
+      height: height,
+    );
+  }
+
   static BorderRadius defaultBorderRadius({double border = 10}) {
     return BorderRadius.circular(border);
   }
