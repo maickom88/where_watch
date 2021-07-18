@@ -8,16 +8,16 @@ class WWPoster extends StatelessWidget {
   final double width;
   final VoidCallback onTap;
   final String image;
-  final String title;
-  final String year;
+  final String? title;
+  final String? year;
   final PosterType posterType;
   const WWPoster({
     Key? key,
     this.width = 140,
     required this.onTap,
     required this.image,
-    required this.title,
-    required this.year,
+    this.title,
+    this.year,
     required this.posterType,
   }) : super(key: key);
   @override
@@ -33,27 +33,27 @@ class WWPoster extends StatelessWidget {
             posterType: posterType,
           ),
           withHeightSpacer(height: 5),
-          Container(
-            width: width,
-            child: Text(
-              title,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1
-                  ?.copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+          if (title != null)
+            Container(
+              width: width,
+              child: Text(
+                title!,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    color: Colors.white, fontWeight: FontWeight.w500),
+              ),
             ),
-          ),
-          Container(
-            width: width,
-            child: Text(
-              year,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText2
-                  ?.copyWith(fontWeight: FontWeight.w300),
+          if (year != null)
+            Container(
+              width: width,
+              child: Text(
+                year!,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2
+                    ?.copyWith(fontWeight: FontWeight.w300),
+              ),
             ),
-          ),
         ],
       ),
     ).withPadding(horizontal: 10, vertical: 0);

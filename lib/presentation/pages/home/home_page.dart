@@ -1,6 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:where_watch_app/core/errors/failures.dart';
 
 import '../../../core/constants/constants.dart';
 import 'home.dart';
@@ -14,10 +17,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late int currentIndex;
-
+  late HomeController controller;
   @override
   void initState() {
     currentIndex = 0;
+    controller = Get.find<HomeController>();
+    controller.getAllPosters();
     super.initState();
   }
 
@@ -36,7 +41,14 @@ class _HomePageState extends State<HomePage> {
               secondaryAnimation: secondaryAnimation,
               child: child,
             ),
-            child: NavigatorController.navs[currentIndex],
+            child: ScopedBuilder(
+              store: controller,
+              onState: (context, state) =>
+                  NavigatorController.navs(controller)[currentIndex],
+              onError: (context, Failure? error) => NavigatorController.error(
+                  error, () => controller.getAllPosters()),
+              onLoading: (context) => NavigatorController.load,
+            ),
           ),
         ),
         bottomNavigationBar: buildBottomNavigationBar(),

@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/enums/enums.dart';
 import '../../../../core/theme/theme.dart';
+import '../../../../domain/entities/posters_entity.dart';
 import '../../../components/components.dart';
+import '../home.dart';
 import '../widgets/widgets.dart';
 
 class ExplorerNav extends StatelessWidget {
-  const ExplorerNav({Key? key}) : super(key: key);
+  final HomeController controller;
+  const ExplorerNav({
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,13 +78,17 @@ class ExplorerNav extends StatelessWidget {
             onTap: () {},
             title: 'Populares',
           ).withPadding(vertical: 0),
-          ListViewBuilder(),
+          ListViewBuilder(
+            posters: controller.posters,
+          ),
           withHeightSpacer(),
           TitleWithAction(
             onTap: () {},
             title: 'Filmes',
           ).withPadding(vertical: 0),
-          ListViewBuilder(),
+          ListViewBuilder(
+            posters: controller.posters,
+          ),
           withHeightSpacer(),
         ],
       ),
@@ -88,8 +97,10 @@ class ExplorerNav extends StatelessWidget {
 }
 
 class ListViewBuilder extends StatelessWidget {
+  final List<PostersEntity> posters;
   const ListViewBuilder({
     Key? key,
+    required this.posters,
   }) : super(key: key);
 
   @override
@@ -99,18 +110,18 @@ class ListViewBuilder extends StatelessWidget {
       height: 260,
       child: ListView.builder(
         padding: EdgeInsets.symmetric(vertical: 10),
-        itemCount: 10,
+        itemCount: posters.length,
         scrollDirection: Axis.horizontal,
         physics: BouncingScrollPhysics(),
         itemBuilder: (_, index) {
-          return WWPoster(
-            image:
-                'https://www.justwatch.com/images/poster/245382594/s332/stranger-things.webp',
-            onTap: () {},
-            posterType: PosterType.serie,
-            title: 'Stranger Things',
-            year: '2021',
-          );
+          if (posters[index].image.isNotEmpty) {
+            return WWPoster(
+              image: posters[index].image,
+              onTap: () {},
+              posterType: posters[index].typePoster,
+            );
+          }
+          return SizedBox();
         },
       ),
     );
