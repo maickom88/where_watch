@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
-import 'package:where_watch_app/presentation/pages/welcome/welcome.dart';
+import 'welcome.dart';
 
 import 'widget/widget.dart';
 

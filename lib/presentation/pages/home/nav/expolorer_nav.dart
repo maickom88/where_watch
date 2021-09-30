@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:where_watch_app/core/constants/routes_constants.dart';
+import 'package:where_watch_app/core/enums/enums.dart';
 
 import '../../../../core/theme/theme.dart';
 import '../../../../domain/entities/posters_entity.dart';
@@ -79,7 +81,9 @@ class ExplorerNav extends StatelessWidget {
             title: 'Populares',
           ).withPadding(vertical: 0),
           ListViewBuilder(
-            posters: controller.posters,
+            posters: controller.posters
+                .where((poster) => poster.typePoster == PosterType.serie)
+                .toList(),
           ),
           withHeightSpacer(),
           TitleWithAction(
@@ -87,7 +91,9 @@ class ExplorerNav extends StatelessWidget {
             title: 'Filmes',
           ).withPadding(vertical: 0),
           ListViewBuilder(
-            posters: controller.posters,
+            posters: controller.posters
+                .where((poster) => poster.typePoster == PosterType.movie)
+                .toList(),
           ),
           withHeightSpacer(),
         ],
@@ -117,7 +123,10 @@ class ListViewBuilder extends StatelessWidget {
           if (posters[index].image.isNotEmpty) {
             return WWPoster(
               image: posters[index].image,
-              onTap: () {},
+              onTap: () => Get.toNamed(
+                RoutesConsts.details,
+                arguments: posters[index].url,
+              ),
               posterType: posters[index].typePoster,
             );
           }

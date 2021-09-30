@@ -28,7 +28,7 @@ class CategoriesChoose extends StatelessWidget {
     }
 
     return Container(
-      width: 450,
+      width: 500,
       child: Stack(
         children: [
           blocCategoryOne(
@@ -57,7 +57,7 @@ class CategoriesChoose extends StatelessWidget {
   }) {
     return Positioned(
       top: 220,
-      left: 30,
+      left: 100,
       child: Row(
         children: [
           ButtonCategory(
@@ -98,7 +98,7 @@ class CategoriesChoose extends StatelessWidget {
   }) {
     return Positioned(
       top: 120,
-      left: 30,
+      left: 10,
       child: Row(
         children: [
           ButtonCategory(
@@ -140,7 +140,7 @@ class CategoriesChoose extends StatelessWidget {
   }) {
     return Positioned(
       top: 80,
-      left: 140,
+      left: 130,
       child: Row(
         children: [
           withWidthSpacer(width: 60),

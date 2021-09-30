@@ -25,6 +25,12 @@ class _CardProviderState extends State<CardProvider>
   }
 
   @override
+  void deactivate() {
+    print('sd');
+    super.deactivate();
+  }
+
+  @override
   Widget build(BuildContext context) {
     super.build(context);
     return InkWell(

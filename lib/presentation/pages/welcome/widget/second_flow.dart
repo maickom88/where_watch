@@ -30,6 +30,7 @@ class SecondFlow extends StatelessWidget {
             height: Get.height.percent(75),
             child: ListView(
               controller: _controller,
+              clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               physics: BouncingScrollPhysics(),
               children: [
