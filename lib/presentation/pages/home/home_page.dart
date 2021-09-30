@@ -31,25 +31,31 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        body: SafeArea(
-          child: PageTransitionSwitcher(
-            duration: Duration(milliseconds: 250),
-            transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
-                FadeThroughTransition(
-              fillColor: AppColors.backgroundColor,
-              animation: primaryAnimation,
-              secondaryAnimation: secondaryAnimation,
-              child: child,
-            ),
-            child: ScopedBuilder(
-              store: controller,
-              onState: (context, state) =>
-                  NavigatorController.navs(controller)[currentIndex],
-              onError: (context, Failure? error) => NavigatorController.error(
-                  error, () => controller.getAllPosters()),
-              onLoading: (context) => NavigatorController.load,
+        appBar: AppBar(
+          toolbarHeight: 0,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          brightness: Brightness.dark,
+        ),
+        body: ScopedBuilder(
+          store: controller,
+          onState: (context, state) => SafeArea(
+            child: PageTransitionSwitcher(
+              duration: Duration(milliseconds: 300),
+              transitionBuilder:
+                  (child, primaryAnimation, secondaryAnimation) =>
+                      FadeThroughTransition(
+                fillColor: AppColors.backgroundColor,
+                animation: primaryAnimation,
+                secondaryAnimation: secondaryAnimation,
+                child: child,
+              ),
+              child: NavigatorController.navs(controller)[currentIndex],
             ),
           ),
+          onError: (context, Failure? error) => NavigatorController.error(
+              error, () => controller.getAllPosters()),
+          onLoading: (context) => NavigatorController.load,
         ),
         bottomNavigationBar: buildBottomNavigationBar(),
       ),

@@ -9,6 +9,12 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        brightness: Brightness.dark,
+      ),
       body: SafeArea(
         child: PageView(
           onPageChanged: (indexPage) => ControllerPage.page.value = indexPage,

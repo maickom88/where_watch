@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'core/constants/constants.dart';
@@ -12,6 +13,7 @@ Future<void> main() async {
 class WhereWatchApp extends StatelessWidget {
   final String initialRoute;
   const WhereWatchApp(this.initialRoute);
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
