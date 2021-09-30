@@ -53,9 +53,9 @@ class _HomePageState extends State<HomePage> {
               child: NavigatorController.navs(controller)[currentIndex],
             ),
           ),
-          onError: (context, Failure? error) => NavigatorController.error(
+          onError: (_, Failure? error) => NavigatorController.error(
               error, () => controller.getAllPosters()),
-          onLoading: (context) => NavigatorController.load,
+          onLoading: (_) => NavigatorController.load,
         ),
         bottomNavigationBar: buildBottomNavigationBar(),
       ),
